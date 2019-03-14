@@ -28,4 +28,4 @@ def fetch_last_gdp():
     return result[1]
 
 def db_exists():
-    os.path.exists("ecoHabit.db")
+    return os.path.exists("ecoHabit.db")
