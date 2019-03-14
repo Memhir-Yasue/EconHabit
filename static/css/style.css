@@ -1,0 +1,20 @@
+html,
+body {
+  height: 100%;
+}
+
+#GDP-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#GDP {
+  color: rgb(43, 134, 41);
+  font-size: 100px;
+}
+
+.buttons {
+  align-items: flex-end;
+}

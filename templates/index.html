@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>EcoHabit</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <div id="GDP-container">
+      <div id="GDP"> ${{GDP}} </div>
+        <form action="{{url_for('update')}}" method="POST">
+          <button type="submit" class="submit" name="state" value="1">Positive!</button>
+          <button type="submit" class="submit" name="state" value="0">Negative!</button>
+        </form>
+    </div>
+
+  </body>
+</html>
