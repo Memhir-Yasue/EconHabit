@@ -1,2 +1,2 @@
 # EconHabit
-See how your virtual economy go up, or down based on your habit over time
+You immigrate to a new country with only 10 dollars in your pocket. Your real life habits will dictate how your economic status turns out in this new world.
