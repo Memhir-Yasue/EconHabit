@@ -5,9 +5,8 @@ from datetime import datetime
 class Ecop:
 	"""docstring for Ecop"""
 
-
 	def __init__(self, economy):
-		self.economy = economy
+		self.economy = round(economy,2)
 
 	def state(self, choice):
 		self.choice = choice
@@ -18,7 +17,6 @@ class Ecop:
 	def compound(self, growth):
 		principle = self.gdp_size()
 		return principle * (1 + growth)
-
 
 	def calculate(self):
 		random.seed(datetime.now())
@@ -49,29 +47,28 @@ class Ecop:
 				growth = (random.randint(10,13)) * 1/100
 				self.economy = self.compound(growth)
 				return round(self.economy,2)
-		else:
-			if self.choice == 0:
-				if(forcast >= 1 and forcast < 6):
-					growth = (random.randint(-1,0)) * 1/100
-					self.economy = self.compound(growth)
-					return round(self.economy,2)
+		elif self.choice == 0:
+			if(forcast >= 1 and forcast < 6):
+				growth = (random.randint(-1,0)) * 1/100
+				self.economy = self.compound(growth)
+				return round(self.economy,2)
 
-				elif(forcast >= 6 and forcast < 21):
-					growth = (random.randint(-3,-1)) * 1/100
-					self.economy = self.compound(growth)
-					return round(self.economy,2)
+			elif(forcast >= 6 and forcast < 21):
+				growth = (random.randint(-3,-1)) * 1/100
+				self.economy = self.compound(growth)
+				return round(self.economy,2)
 
-				elif(forcast >= 21 and forcast < 71):
-					growth = (random.randint(-6,-3)) * 1/100
-					self.economy = self.compound(growth)
-					return round(self.economy,2)
+			elif(forcast >= 21 and forcast < 71):
+				growth = (random.randint(-6,-3)) * 1/100
+				self.economy = self.compound(growth)
+				return round(self.economy,2)
 
-				elif(forcast >= 70 and forcast < 96):
-					growth = (random.randint(-9,-6)) * 1/100
-					self.economy = self.compound(growth)
-					return round(self.economy,2)
+			elif(forcast >= 70 and forcast < 96):
+				growth = (random.randint(-9,-6)) * 1/100
+				self.economy = self.compound(growth)
+				return round(self.economy,2)
 
-				elif(forcast >= 96 and forcast < 101):
-					growth = (random.randint(-12,-9)) * 1/100
-					self.economy = self.compound(growth)
-					return round(self.economy,2)
+			elif(forcast >= 96 and forcast < 101):
+				growth = (random.randint(-12,-9)) * 1/100
+				self.economy = self.compound(growth)
+				return round(self.economy,2)
