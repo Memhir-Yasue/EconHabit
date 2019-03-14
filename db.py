@@ -1,4 +1,5 @@
 import sqlite3
+import os.path
 import time
 
 
@@ -25,3 +26,6 @@ def fetch_last_gdp():
     cursor.execute("SELECT * FROM econData ORDER BY GDP DESC LIMIT 1")
     result = cursor.fetchone()
     return result[1]
+
+def db_exists():
+    os.path.exists("ecoHabit.db")
