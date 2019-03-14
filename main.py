@@ -10,4 +10,8 @@ for i in range(100):
 	Halowa.calculate()
 	GDP = Halowa.gdp_size()
 	db.data_entry(GDP)
+	print(GDP)
+
+GDP = db.fetch_last_gdp()
+print(GDP)
 db.closedb()

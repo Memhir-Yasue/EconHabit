@@ -12,7 +12,6 @@ def closedb():
     conn.close()
 
 def connect():
-    startdb()
     cursor.execute("CREATE TABLE IF NOT EXISTS econData(unixTime REAL, GDP REAL)")
 
 def data_entry(GDP):
@@ -20,3 +19,9 @@ def data_entry(GDP):
     cursor.execute("INSERT INTO econData (unixTime, GDP) VALUES(?,?)",
     (unix, GDP))
     conn.commit()
+
+def fetch_last_gdp():
+    startdb()
+    cursor.execute("SELECT * FROM econData ORDER BY GDP DESC LIMIT 1")
+    result = cursor.fetchone()
+    return result[1]
