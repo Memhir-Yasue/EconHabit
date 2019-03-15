@@ -29,7 +29,7 @@ server = flask.Flask(__name__)
 def home():
     return render_template('index.html', GDP = GDP)
 
-@server.route('/m', methods=['POST'])
+@server.route('/', methods=['POST'])
 def update():
     state = request.form['state']
     Account.state(int(state))
