@@ -21,15 +21,15 @@ def initalizeDB():
 GDP = initalizeDB()
 Account = Ecop(GDP)
 
-server = flask.Flask(__name__)
+app = flask.Flask(__name__)
 #
 # Halowa = Ecop(10)
 # GDP = str(db.fetch_last_gdp())
-@server.route('/')
+@app.route('/')
 def home():
     return render_template('index.html', GDP = GDP)
 
-@server.route('/', methods=['POST'])
+@app.route('/', methods=['POST'])
 def update():
     state = request.form['state']
     Account.state(int(state))
@@ -42,7 +42,7 @@ def update():
     print(GDP)
     return render_template('index.html', GDP = GDP)
 
-# @server.route('/u', methods=['POST'])
+# @app.route('/u', methods=['POST'])
 # def update():
 #     state = request.form['state']
 #     Account.state(state)
@@ -52,4 +52,4 @@ def update():
 #     return render_template('test.html', GDP = GDP)
 
 if __name__ == '__main__':
-    server.run(debug=True)
+    app.run(debug=True)
